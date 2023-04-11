@@ -34,3 +34,14 @@ function saveBtnToggle(boolean) {
     prefixEl.setAttribute("disabled", true);
   }
 }
+
+// 활성화 시 storage에 활성 여부 데이터를 저장.
+$('#onoff').on('click', () => {
+  chrome.storage.local.set({ 'isEnable': $('#onoff').is(':checked') }, () => { });
+});
+
+// On - Off 버튼 조정
+chrome.storage.local.get('isEnable', (flag) => {  
+  $('#onoff').prop('checked', flag.isEnable);
+  chrome.storage.local.set({ 'isEnable': $('#onoff').is(':checked') }, () => { });
+})

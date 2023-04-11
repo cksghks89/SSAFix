@@ -71,3 +71,45 @@ main {
   background: #abe7ff;
   cursor: pointer;
 }
+
+/* On Off Button Style*/
+#onoff {
+  appearance: none;
+}
+
+#onoffToggle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 55px;
+  height: 25px;
+  top: 0px;
+  border: 1px solid #afafaf;
+  border-radius: 20px;
+  transition: 0.2s;
+  background: #ffffff;
+}
+
+#onoffball {
+  position: absolute;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: -1px;
+  left: -1px;
+  border: 1px solid #999999;
+  border-radius: 20px;
+  transition: 0.2s;
+  background: #ffffff;
+}
+
+#onoff:checked+#onoffToggle {
+  border: 1px solid #6dcef5;
+  background: #6dcef5;
+}
+
+#onoff:checked+#onoffToggle #onoffball {
+  left: 30px;
+  border: 1px solid #6dcef5;
+  background: #ffffff;
+}
