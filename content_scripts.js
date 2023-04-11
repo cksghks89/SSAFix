@@ -1,8 +1,17 @@
 window.onload = () => {
   setInterval(() => {
     let chatframe = document.getElementById("chatframe");
-    let el = chatframe.contentWindow.document;
-    let inputContainer = el.querySelector("#input");
+    let el;
+    let inputContainer;
+
+    //새 창에서 새 탭 열기 -> chatframe이 존재하지 않음
+    //null값을 체크해 inputContainer를 document에서 찾을지, el에서 찾을지 지정
+    if (chatframe == null) {
+      inputContainer = document.querySelector("#input");
+    } else {
+      el = chatframe.contentWindow.document;
+      inputContainer = el.querySelector("#input");
+    }
     let input = inputContainer.children[1];
 
     // focus 이벤트
