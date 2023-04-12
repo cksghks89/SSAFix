@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 main {
@@ -179,4 +180,8 @@ main {
   padding-right: 2px;
   padding-left: 2px;
   height: 38px;
+}
+
+.reference a {
+  margin: 0 2px;
 }
