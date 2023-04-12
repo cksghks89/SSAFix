@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 main {
@@ -41,11 +42,18 @@ main {
 
 .input {
   text-align: center;
-  height: 40px;
-  width: 260px;
+  height: 38px;
+  width: 210px;
   font-size: 18px;
   font-family: Roboto, Arial, sans-serif;
-  margin-bottom: 15px;
+  outline: none;
+  border: 0px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.input-box input:focus::placeholder {
+  color: transparent;
 }
 
 .reference {
@@ -96,13 +104,13 @@ main {
     background: #6dcef5;
 }
 
-.onoff:checked ~ .onoffToggle {
+.onoff:checked + .onoffToggle {
   border: 2px solid #6dcef5;
   background: #6dcef5;
-
 }
 
 .onoff:checked ~ .onoffToggle .onoffBall {
+  left: 30px;
   left: calc(100% - 23px);
   border: 2px solid #6dcef5;
   background: #fff;
@@ -117,5 +125,68 @@ main {
   position: absolute;
   top: 20px;
   right : 30px;
-  box-shadow: 0, 0, 10px 3px #000000;
+}
+
+/* claer + input Style */
+.input-box {
+  position: relative;
+  display: flex;
+  float: left;
+  align-items: center;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 0 0px black inset;
+  height: 40px;
+  width: 219px;
+  padding-left: 1px;
+  padding-right: 1px;
+  margin-right: 1px;
+}
+
+/* clear Style */
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 100 700;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v104/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2)
+    format("woff2");
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: 200;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  color: black;
+  visibility: hidden;
+}
+
+.material-symbols-outlined:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+.clear-box {
+  /* 포지션 */
+  position: absolute;
+  display: flex;
+  right: 1px;
+  align-items: center;
+  padding-right: 2px;
+  padding-left: 2px;
+  height: 38px;
+}
+
+.reference a {
+  margin: 0 2px;
 }
