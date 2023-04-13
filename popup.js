@@ -3,7 +3,7 @@ let prefixEl = document.getElementById("prefix");
 let clearBtn = document.getElementById("clearBtn");
 let inputBox = document.getElementById("input-box");
 let clearBox = document.getElementById("clear-box");
-let state = null;
+let flag = document.getElementById("onoff");
 
 // popup창 로딩시 동작
 window.onload = () => {
@@ -18,6 +18,13 @@ window.onload = () => {
       state = true;
       saveBtnToggle(true);
     }
+
+    // 창이 열릴 때 On Off 상태 불러오기
+    chrome.storage.sync.get(["toggleState"], function(result){
+      console.log("저장된 토글 : ");
+      console.dir(result.toggleState);
+      flag.checked = result.toggleState;
+    })
   });
 };
 
@@ -79,4 +86,11 @@ inputBox.addEventListener("mouseover", () => {
 
 inputBox.addEventListener("mouseout", () => {
   if (state) inputBox.style.boxShadow = "0 0 0 0 black inset";
+});
+
+// On Off 상태 저장
+flag.addEventListener("click", () => {
+  console.log(flag.checked);
+  chrome.storage.sync.set({ toggleState: flag.checked }, function() {
+  });
 });
