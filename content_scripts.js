@@ -41,6 +41,12 @@ window.onload = () => {
 
 // prefix 삽입 함수
 function addPrefix(inputContainer, input, _window) {
+  // On Off 상태 획득
+  chrome.storage.sync.get(["toggleState"], function(toggleResult) {
+  
+    // unchecked or undefined 시 리턴
+  if (toggleResult.toggleState != true) return;
+
   chrome.storage.sync.get(["prefix"], function (result) {
     let prefix = result.prefix;
     let inputText = input.innerText;
@@ -62,5 +68,6 @@ function addPrefix(inputContainer, input, _window) {
     selection.removeAllRanges();
     selection.addRange(range);
     // 커서를 맨 뒤로 이동 -- end
+    });
   });
 }
