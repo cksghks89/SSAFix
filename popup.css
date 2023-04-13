@@ -6,7 +6,7 @@
 
 main {
   width: 350px;
-  height: 230px;
+  height: 250px;
   padding: 20px;
 
   display: flex;
@@ -81,27 +81,26 @@ main {
 }
 
 /* On Off Button Style*/
-
 .onoffToggle {
   width: 56px;
   height: 26px;
   display: block;
   position: relative;
   border-radius: 20px;
-  background: #ffffff;
-  border : 2px solid #afafaf;
+  background: rgba(255, 0, 0, 0.534);
+  border: 2px solid #afafaf;
   cursor: pointer;
 }
 
 .onoffToggle .onoffBall {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50%;
-    left: 2px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background: #6dcef5;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.664);
 }
 
 .onoff:checked + .onoffToggle {
@@ -116,15 +115,13 @@ main {
   background: #fff;
 }
 
-.onoffToggle, .onoffBall {
+.onoffToggle,
+.onoffBall {
   transition: all 0.2s ease-in;
 }
 
-
 .toggleContainer {
-  position: absolute;
-  top: 20px;
-  right : 30px;
+  margin: 0 auto;
 }
 
 /* claer + input Style */
