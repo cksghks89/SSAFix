@@ -1,5 +1,9 @@
 window.onload = () => {
-  setInterval(() => {
+  let loadTimeCnt = 0;
+  let interval = setInterval(() => {
+    // 페이지 로딩 후 20초 경과시 interval 종료
+    if (loadTimeCnt++ >= 100) clearInterval(interval);
+
     let chatframe = document.getElementById("chatframe");
     let el;
     let inputContainer;
@@ -36,38 +40,37 @@ window.onload = () => {
         addPrefix(inputContainer, input, _window);
       }
     });
-  }, 2000);
+  }, 200);
 };
 
 // prefix 삽입 함수
 function addPrefix(inputContainer, input, _window) {
   // On Off 상태 획득
-  chrome.storage.sync.get(["toggleState"], function(toggleResult) {
-  
+  chrome.storage.sync.get(["toggleState"], function (toggleResult) {
     // unchecked or undefined 시 리턴
-  if (toggleResult.toggleState != true) return;
+    if (toggleResult.toggleState != true) return;
 
-  chrome.storage.sync.get(["prefix"], function (result) {
-    let prefix = result.prefix;
-    let inputText = input.innerText;
+    chrome.storage.sync.get(["prefix"], function (result) {
+      let prefix = result.prefix;
+      let inputText = input.innerText;
 
-    if (!prefix || inputText) {
-      return;
-    }
+      if (!prefix || inputText) {
+        return;
+      }
 
-    inputContainer.setAttribute("has-text", true);
-    input.removeAttribute("aria-invalid");
-    input.innerText = `${prefix}`;
+      inputContainer.setAttribute("has-text", true);
+      input.removeAttribute("aria-invalid");
+      input.innerText = `${prefix}`;
 
-    // 커서를 맨 뒤로 이동 -- start
-    const range = document.createRange();
-    range.setStart(input.childNodes[0], prefix.length);
-    range.setEnd(input.childNodes[0], prefix.length);
+      // 커서를 맨 뒤로 이동 -- start
+      const range = document.createRange();
+      range.setStart(input.childNodes[0], prefix.length);
+      range.setEnd(input.childNodes[0], prefix.length);
 
-    const selection = _window.document.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-    // 커서를 맨 뒤로 이동 -- end
+      const selection = _window.document.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      // 커서를 맨 뒤로 이동 -- end
     });
   });
 }
