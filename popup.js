@@ -8,7 +8,7 @@ let flag = document.getElementById("onoff");
 
 // popup창 로딩시 동작
 window.onload = () => {
-  chrome.storage.sync.get(["prefix"], function (result) {
+  chrome.storage.local.get(["prefix"], function (result) {
     if (result.prefix) {
       prefixEl.value = result.prefix;
       //값이있다면 클리어 버튼 출력해라
@@ -21,7 +21,7 @@ window.onload = () => {
     }
 
     // 창이 열릴 때 On Off 상태 불러오기
-    chrome.storage.sync.get(["toggleState"], function (result) {
+    chrome.storage.local.get(["toggleState"], function (result) {
       if (!result.toggleState) {
         mainEl.setAttribute("class", "gray");
       }
@@ -34,7 +34,7 @@ window.onload = () => {
 saveBtn.addEventListener("click", () => {
   if (saveBtn.innerText === "저장") {
     let value = prefixEl.value;
-    chrome.storage.sync.set({ prefix: value }, function () {});
+    chrome.storage.local.set({ prefix: value }, function () {});
     //state 변수 false로 사용 (focus 이벤트를 위해 사용)
     state = false;
     saveBtnToggle(false);
@@ -65,7 +65,7 @@ function saveBtnToggle(boolean) {
 //클리어 버튼 클릭시 storage와 value값 초기화
 clearBtn.addEventListener("click", () => {
   prefixEl.value = null;
-  chrome.storage.sync.set({ prefix: null }, function () {});
+  chrome.storage.local.set({ prefix: null }, function () {});
   saveBtn.innerText = "저장";
   state = true;
   saveBtnToggle(true);
@@ -97,5 +97,5 @@ flag.addEventListener("click", () => {
   } else {
     mainEl.setAttribute("class", "gray");
   }
-  chrome.storage.sync.set({ toggleState: flag.checked }, function () {});
+  chrome.storage.local.set({ toggleState: flag.checked }, function () {});
 });
