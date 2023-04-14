@@ -47,6 +47,7 @@ function addPrefix(inputContainer, input, _window) {
     // On Off 상태 획득
     chrome.storage.local.get(["toggleState"], function (toggleResult) {
       // unchecked or undefined 시 리턴
+      if (!toggleResult) return;
       if (toggleResult.toggleState != true) return;
 
       chrome.storage.local.get(["prefix"], function (result) {
