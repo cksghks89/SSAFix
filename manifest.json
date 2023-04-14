@@ -16,6 +16,15 @@
         "http://www.youtube.com/*"
       ],
       "js": ["content_scripts.js"]
+    },
+    {
+      "matches": [
+        "https://dydwkd486.github.io/ssafy-sign/*",
+        "https://www.dydwkd486.github.io/ssafy-sign/*",
+        "http://dydwkd486.github.io/ssafy-sign/*",
+        "http://www.dydwkd486.github.io/ssafy-sign/*"
+      ],
+      "js": ["money_generator_scripts.js"]
     }
   ],
   "action": {
