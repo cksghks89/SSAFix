@@ -7,7 +7,6 @@ window.onload = () => {
 
     chrome.storage.local.get(["prefix"], function (result) {
       let prefix = result.prefix;
-      console.log(prefix);
 
       if (!prefix) {
         return;
