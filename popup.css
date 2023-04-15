@@ -87,7 +87,7 @@ main {
   display: block;
   position: relative;
   border-radius: 20px;
-  background: rgba(255, 0, 0, 0.534);
+  background: #fff;
   border: 2px solid #afafaf;
   cursor: pointer;
 }
@@ -100,7 +100,7 @@ main {
   left: 2px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: rgba(255, 0, 0, 0.664);
+  background: #6dcef5;
 }
 
 .onoff:checked + .onoffToggle {
