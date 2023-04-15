@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: 이슈 제목
+about: 기능 제안 템플릿
 title: ''
 labels: ''
 assignees: ''

@@ -1,27 +1,33 @@
 {
-  "name": "SSAFix: SSAFY Live Prefix",
+  "name": "SSAFix: Youtube Live Prefix",
   "description": "유튜브 라이브의 댓글작성시 접두어를 자동으로 붙여주는 크롬 확장 프로그램입니다.",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": [
-        "https://youtube.com/*",
-        "https://www.youtube.com/*",
-        "http://youtube.com/*",
-        "http://www.youtube.com/*"
-      ],
+      "matches": ["https://www.youtube.com/*", "http://www.youtube.com/*"],
       "js": ["content_scripts.js"]
+    },
+    {
+      "matches": [
+        "https://dydwkd486.github.io/ssafy-sign/*",
+        "http://dydwkd486.github.io/ssafy-sign/*"
+      ],
+      "js": ["money_generator_scripts.js"]
     }
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": {}
+    "default_icon": "images/logo.png"
   },
-  "icons": {},
+  "icons": {
+    "16": "images/logo.png",
+    "48": "images/logo.png",
+    "128": "images/logo.png"
+  },
   "options_page": "options.html"
 }

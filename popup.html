@@ -10,6 +10,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
   <body>
     <main>
@@ -18,16 +22,31 @@
         <p><span class="youtube">Youtube</span> Live Prefix</p>
       </div>
       <div class="input-container">
-        <div>
+        <div class="input-box" id="input-box">
           <input class="input" type="text" id="prefix" placeholder="Typing Prefix" />
+          <!-- clear button -->
+          <div class="clear-box" id="clear-box">
+            <span id="clearBtn" class="material-symbols-outlined">close</span>
+          </div>
         </div>
         <div>
           <button id="saveBtn" class="button btnFade btnLightBlue">저장</button>
+        </div>
+
+        <!-- on/off Button -->
+        <div style="margin-top: 10px; margin-bottom: 10px" class="toggleContainer">
+          <input type="checkbox" id="onoff" class="onoff" hidden>
+          <label for="onoff" class="onoffToggle">
+            <span class="onoffBall"></span>
+          </label>
         </div>
       </div>
       <div class="reference">
         <a title="SSAFix Github" href="https://github.com/cksghks89/SSAFix" target="_blank">
           <i class="fa-brands fa-github fa-xl"></i>
+        </a>
+        <a title="SSAFY 교육지원금 생성기" href="https://dydwkd486.github.io/ssafy-sign/" target="_blank">
+          <i class="fa-brands fa-react fa-xl" style="color: #61dafb;"></i>
         </a>
       </div>
     </main>
