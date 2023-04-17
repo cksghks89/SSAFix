@@ -53,6 +53,32 @@ SSAFix를 이용하면 Youtube 계정의 이름을 변경하지 않고도 설정
 <br>
 <br>
 
+## 크롬 마켓 다운로드
+
+<a href="https://chrome.google.com/webstore/detail/ssafix-youtube-live-prefi/knpdnlpnggdikoalhgbiphgfmmnnnmdd?hl=ko" alt="SSAFix Download" target="_blank">
+
+![chrome-link](images/chrome-link.png)
+
+</a>
+
+<br>
+
 ## 동작화면
 
+**Prefix 자동추가 동작화면**
+
 ![animation](images/Animation.gif)
+
+<br>
+
+**SSAFY 교육지원금 생성기 지역, 반, 이름 자동추가 동작화면**
+
+![animation2](images/Animation2.gif)
+
+<br>
+
+## 기능제안 및 버그신고
+
+<a href="https://github.com/cksghks89/SSAFix/issues">
+  <img src="images/maintenance.png" width="100" height="100">
+</a>
