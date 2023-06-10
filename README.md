@@ -27,7 +27,7 @@ SSAFix를 이용하면 Youtube 계정의 이름을 변경하지 않고도 설정
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/cksghks89"><img src="https://avatars.githubusercontent.com/cksghks89" width="100px;" alt="송찬환"/><br /><b>송찬환</b></a><br />
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/meoldae"><img src="https://avatars.githubusercontent.com/meoldae" width="100px;" alt="전준영"/><br /><b>전준영</b></a><br />
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/wjdgusaho"><img src="https://avatars.githubusercontent.com/wjdgusaho" width="100px;" alt="정현모"/><br /><b>정현모</b></a><br />
-        <td align="center" valign="top" width="14.28%"><a href="https://github.com/gmzuddl"><img src="https://avatars.githubusercontent.com/gmzuddl" width="100px;" alt="이현욱"/><br /><b>이현욱</b></a><br />
+        <td align="center" valign="top" width="14.28%"><a href="https://github.com/Devwooki"><img src="https://avatars.githubusercontent.com/u/70623636?v=4" width="100px;" alt="이현욱"/><br /><b>이현욱</b></a><br />
     </tr>
   </tbody>
 </table>
