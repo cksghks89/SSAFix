@@ -51,7 +51,7 @@ function addPrefix(inputContainer, input, _window) {
       if (toggleResult.toggleState != true) return;
 
       chrome.storage.local.get(["prefix"], function (result) {
-        let prefix = result.prefix;
+        let prefix = result.prefix + "\u00a0";
         let inputText = input.innerText;
 
         if (!prefix || inputText) {
