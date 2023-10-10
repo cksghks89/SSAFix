@@ -1,7 +1,7 @@
 {
   "name": "SSAFix: Youtube Live Prefix",
   "description": "유튜브 라이브의 댓글작성시 접두어를 자동으로 붙여주는 크롬 확장 프로그램입니다.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
