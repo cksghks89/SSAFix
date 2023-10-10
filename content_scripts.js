@@ -6,14 +6,14 @@ window.onload = () => {
       let inputContainer;
       let _window;
 
-      //새 창에서 새 탭 열기 -> chatframe이 존재하지 않음
-      //null값을 체크해 inputContainer를 document에서 찾을지, el에서 찾을지 지정
+      // 새 창에서 새 탭 열기 -> chatframe이 존재하지 않음
+      // null값을 체크해 inputContainer를 document에서 찾을지, el에서 찾을지 지정
       if (chatframe == null) {
         inputContainer = document.querySelector("#input");
         _window = window;
       } else {
         el = chatframe.contentWindow.document;
-        inputContainer = el.querySelector("#input");
+        inputContainer = el.querySelectorAll("#input")[1];
         _window = chatframe.contentWindow;
       }
       let input = inputContainer.children[1];
@@ -37,7 +37,9 @@ window.onload = () => {
           addPrefix(inputContainer, input, _window);
         }
       });
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }, 500);
 };
 
